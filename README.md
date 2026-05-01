@@ -5,7 +5,7 @@
 
 Right-click any TeamSpeak 3 client to launch a poke campaign.
 
-Preset bursts (Wake-up, Halt, Symbol Storm, Silent, MAX SPAM) plus a custom Qt dialog with Burst/Schedule mode toggle, paired sliders for count and intervals, and a TS3 dark theme. Hard-cap of 500 pokes and 50ms anti-flood floor protect against server kicks.
+Preset bursts (CZ, Symbol Storm, Silent, MAX) plus a custom dialog with Burst/Schedule mode toggle, paired sliders for count and intervals. Hard-cap of 500 pokes and 50ms anti-flood floor protect against server kicks. Native TS3 theme.
 
 Part of the [**ZeddiHub TeamSpeak Addons**](https://github.com/ZeddiS/zeddihub-teamspeak-addons) collection.
 
@@ -15,34 +15,41 @@ Part of the [**ZeddiHub TeamSpeak Addons**](https://github.com/ZeddiS/zeddihub-t
 
 All download files are in **[Releases](https://github.com/ZeddiS/zeddihub-teamspeak-pokebot/releases/latest)**.
 
-### Option A: Installer (.exe) -- recommended
+### Option A: TS3 native install (.ts3_plugin) -- recommended
 
-Download and run **`pokebot-Setup-v1.2.1.exe`**
+1. Download the .ts3_plugin file matching your TeamSpeak 3 version:
 
-The wizard:
-1. Detects your TeamSpeak 3 version and selects the correct API DLL (23 / 24 / 25 / 26)
-2. Detects running TS3 and offers to close it (DLL would otherwise be locked)
-3. Installs the DLL to `%APPDATA%\TS3Client\plugins\` (per-user, no admin needed)
-4. Registers an uninstaller in Add/Remove Programs
+| TS3 client | API | File |
+|---|---|---|
+| 3.5.0 | 23 | `pokebot-v1.3.0-TS3-3.5.0-api23.ts3_plugin` |
+| 3.5.1 - 3.5.5 | 24 | `pokebot-v1.3.0-TS3-3.5.1-3.5.5-api24.ts3_plugin` |
+| **3.5.6** | **25** | **`pokebot-v1.3.0-TS3-3.5.6-api25.ts3_plugin`** |
+| 3.6.x and newer | 26 | `pokebot-v1.3.0-TS3-3.6+-api26.ts3_plugin` |
+
+2. Double-click the downloaded file. TS3 client opens an install dialog.
+3. Click **Yes** to install. TS3 copies the DLL into the plugins folder.
+4. Restart TS3 if requested. Enable the plugin in **Settings -> Plugins**.
 
 ### Option B: Manual (.dll)
 
 Download the raw DLL matching your TS3 client version:
 
-| TS3 client | Plugin API | File |
-|---|---|---|
-| 3.5.0 | 23 | `zeddihub_pokebot_api23_win64.dll` |
-| 3.5.1 - 3.5.5 | 24 | `zeddihub_pokebot_api24_win64.dll` |
-| **3.5.6** | **25** | **`zeddihub_pokebot_api25_win64.dll`** |
-| 3.6.x and newer | 26 | `zeddihub_pokebot_api26_win64.dll` |
+- `zeddihub_pokebot_api23_win64.dll` -- TS3 3.5.0
+- `zeddihub_pokebot_api24_win64.dll` -- TS3 3.5.1 - 3.5.5
+- `zeddihub_pokebot_api25_win64.dll` -- TS3 3.5.6
+- `zeddihub_pokebot_api26_win64.dll` -- TS3 3.6.x and newer
 
 Copy the DLL to `%APPDATA%\TS3Client\plugins\`, then in TS3 go to **Settings -> Plugins -> Reload All -> tick Enabled**.
 
 If TS3 reports 'API version not compatible', you have the wrong file -- try a different API number.
 
+## Theme
+
+Plugin dialogs use **TS3 client's native theme**. They look exactly like the rest of the TS3 UI -- no custom Discord-like dark theme. Whatever skin/theme you have set in TS3 will be applied.
+
 ## Source code
 
-Source code lives in the [**collection repo**](https://github.com/ZeddiS/zeddihub-teamspeak-addons), folder `pokebot/`. Build instructions and CMake configuration are there.
+Source code lives in the [collection repo](https://github.com/ZeddiS/zeddihub-teamspeak-addons), folder `pokebot/`. CMake build instructions are there.
 
 ## Changelog
 
@@ -56,12 +63,12 @@ MIT -- see [LICENSE](LICENSE).
 
 ## Links
 
-- :house: **ZeddiHub web**: https://zeddihub.eu
-- :wrench: **ZeddiHub Tools**: https://zeddihub.eu/tools/
-- :busts_in_silhouette: **Author**: https://zeddis.xyz
-- :file_folder: **Collection**: [zeddihub-teamspeak-addons](https://github.com/ZeddiS/zeddihub-teamspeak-addons)
+- **ZeddiHub web**: https://zeddihub.eu
+- **ZeddiHub Tools**: https://zeddihub.eu/tools/
+- **Author**: https://zeddis.xyz
+- **Collection**: [zeddihub-teamspeak-addons](https://github.com/ZeddiS/zeddihub-teamspeak-addons)
 
-**Sister plugins:** [Poke Bot](https://github.com/ZeddiS/zeddihub-teamspeak-pokebot) | [Follow](https://github.com/ZeddiS/zeddihub-teamspeak-follow) | [MoveSpam](https://github.com/ZeddiS/zeddihub-teamspeak-movespam) | [Voice Changer](https://github.com/ZeddiS/zeddihub-teamspeak-voicechanger) | [AutoReconnect](https://github.com/ZeddiS/zeddihub-teamspeak-autoreconnect) | [Greeting Bot](https://github.com/ZeddiS/zeddihub-teamspeak-greetingbot)
+**Sister plugins:** [Poke Bot](https://github.com/ZeddiS/zeddihub-teamspeak-pokebot) | [Follow](https://github.com/ZeddiS/zeddihub-teamspeak-follow) | [MoveSpam](https://github.com/ZeddiS/zeddihub-teamspeak-movespam) | [Soundboard](https://github.com/ZeddiS/zeddihub-teamspeak-soundboard)
 
 ---
 
